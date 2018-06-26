@@ -6,7 +6,8 @@ function tubeSearch(search) {
     const params = {
         part: 'snippet',
         key: key,
-        q: search
+        q: search,
+        maxResults: 10
     }
 
    
