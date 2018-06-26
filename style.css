@@ -21,6 +21,11 @@ header {
     width: 560px;
 }
 
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .spacer {
     height: 65px;
 }
@@ -42,5 +47,5 @@ header {
 }
 
 .results {
-    
+    margin-top: 30px;
 }

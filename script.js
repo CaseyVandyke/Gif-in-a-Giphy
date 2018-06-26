@@ -15,7 +15,7 @@ function tubeSearch(search) {
             $('.results').html('');
             for(let i = 0; i < data.items.length; i++) {
                $('.results').append(`<h3>${data.items[i].snippet.title}</h3>`);
-                 $('.results').append(`<img src="${data.items[i].snippet.thumbnails.medium.url}"/>`);
+                 $('.results').append(`<img src="${data.items[i].snippet.thumbnails.medium.url}" alt="${data.items[i].snippet.description}/>`);
                 
             }
     })
