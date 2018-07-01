@@ -1,29 +1,24 @@
-function tubeSearch(search) {
-
-    const key = 'AIzaSyDCnL8sLhq05QgnhiwqvMFCDbKsAhYfmbA';
-    const URL = 'https://www.googleapis.com/youtube/v3/search';
-
-    const params = {
-        part: 'snippet',
-        key: key,
+function getDataFromGiphy(search) {
+    
+    const URL = 'http://api.giphy.com/v1/gifs/search';
+    // set up the query
+    const query = {
+        api_key: 'RVU0bZkFNjUyjUwwV8wHHrO37B0V01jy',
         q: search,
-        maxResults: 10
+        limit: 10,
     }
 
-   
-        $.getJSON(URL, params, function (data) {
-            $('.results').html('');
-            for(let i = 0; i < data.items.length; i++) {
-               $('.results').append(`<h3>${data.items[i].snippet.title}</h3>`);
-                 $('.results').append(`<img src="${data.items[i].snippet.thumbnails.medium.url}" alt="${data.items[i].snippet.description}/>`);
-                
-            }
+    $.getJSON(URL, query, function (data) {
+        $('.results').html('');
+        for (let i = 0; i < data.data.length; i++) {
+            $('.results').append(`<h3>${data[i].title}</h3>`);
+            
+        }
     })
-
 }
 
 $('.js-catcher').on('submit', function (event) {
     event.preventDefault();
-    let searchHolder = $('#usr').val();
-    tubeSearch(searchHolder);
-});
+    let userInfo = $('#usr').val();
+    getDataFromGiphy(userInfo);
+})
