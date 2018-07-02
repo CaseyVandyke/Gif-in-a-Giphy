@@ -7,45 +7,64 @@
 }
 
 body {
-    background-color: #eee;
+    background-color: #000000;
+    font-family: Roboto, sans-serif;
 }
 
 .logo {
-    width: 120px;
+    margin-top: 20px;
     padding: 10px;
+    width: 200px;
 }
 
 header {
-    position: fixed;
     text-align: center;
-    width: 560px;
+    margin-bottom: 10px;
 }
 
-h1 {
+.fun-info {
     text-align: center;
-    margin-bottom: 20px;
+    font-weight: 300;
+    color: #fff;
 }
 
-.spacer {
-    height: 65px;
+#usr, .js-submit {
+    width: 300px;
+    margin: 0 auto;
+    padding: 10px;
 }
 
 .js-catcher {
     margin: 0 auto;
-    width: 300px;
 }
 
-.break {
-    margin-right: 10px;
+.js-submit {
+    margin: 20px 0;
+}
+
+.js-container {
+    text-align: center;
 }
 
 .container {
-    width: 560px;
-    height: 100vh;
-    background-color: #fff;
+    width: 1000px;
     margin: 0 auto;
 }
 
+.results-container {
+    margin: 0 auto;
+    width: 950px;
+}
+
 .results {
-    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gif-box {
+    margin: 20px;
+    display: block;
+    width: 250px;
+    height: 160px;
 }

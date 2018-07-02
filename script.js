@@ -5,13 +5,13 @@ function getDataFromGiphy(search) {
     const query = {
         api_key: 'RVU0bZkFNjUyjUwwV8wHHrO37B0V01jy',
         q: search,
-        limit: 10,
+        limit: 150,
     }
 
-    $.getJSON(URL, query, function (data) {
+    $.getJSON(URL, query, function (gif) {
         $('.results').html('');
-        for (let i = 0; i < data.data.length; i++) {
-            $('.results').append(`<h3>${data[i].title}</h3>`);
+        for (let i = 0; i <gif.data.length; i++) {
+            $('.results').append(`<img class="gif-box" src="${gif.data[i].images.fixed_height_small.url}" alt="${gif.data[i].images}">`);
             
         }
     })
