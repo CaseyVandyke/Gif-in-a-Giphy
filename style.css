@@ -54,3 +54,11 @@ header {
     width: 200px;
     height: 100px;
 }
+
+/* Media Queries */
+
+@media only screen and (max-width: 426px) {
+    .js-submit {
+        width: 300px;
+    }
+}
