@@ -5,7 +5,7 @@ function getDataFromGiphy(search) {
     const query = {
         api_key: 'RVU0bZkFNjUyjUwwV8wHHrO37B0V01jy',
         q: search,
-        limit: 9,
+        limit: 50,
     }
 
     $.getJSON(URL, query, function (gif) {
