@@ -39,12 +39,13 @@ function getDataForSticker(search) {
     })
 }
 
-$("#gif-select").change(function() {
-    let selectedGif = $("#gif-select option:selected").val();
+
+   
 
 
 $('.js-catcher').on('submit', function (event) {
     event.preventDefault();
+    let selectedGif = $("#gif-select option:selected").val();
     let userInfo = $('#usr').val();
     if (selectedGif === "gif") {
         getDataFromGiphy(userInfo);
@@ -52,5 +53,4 @@ $('.js-catcher').on('submit', function (event) {
         getDataForSticker(userInfo);
     }
 
-})
 });
