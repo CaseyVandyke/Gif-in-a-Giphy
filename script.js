@@ -1,3 +1,5 @@
+/* Gif call */
+
 function getDataFromGiphy(search) {
 
     const URL = 'http://api.giphy.com/v1/gifs/search';
@@ -5,7 +7,7 @@ function getDataFromGiphy(search) {
     const query = {
         api_key: 'RVU0bZkFNjUyjUwwV8wHHrO37B0V01jy',
         q: search,
-        limit: 25,
+        limit: 25
     }
 
     $.getJSON(URL, query, function (gif) {
@@ -18,29 +20,49 @@ function getDataFromGiphy(search) {
 
 }
 
-
+/* Sticker call */
 
 function getDataForSticker(search) {
 
     const URL = 'http://api.giphy.com/v1/stickers/search';
     // set up the query
     const query = {
-        api_key: '7Q2Zlr9K4UiisLdt8XuwfGiZXEHuxr7n',
+        api_key: 'RVU0bZkFNjUyjUwwV8wHHrO37B0V01jy',
         q: search,
-        limit: 24,
+        limit: 25
     }
 
     $.getJSON(URL, query, function (sticker) {
-        $('.sticker-results').html('');
+        $('.results').html('');
         for (let i = 0; i < sticker.data.length; i++) {
-            $('.sticker-results').append(`<img class="gif-box" src="${sticker.data[i].images.fixed_height_small.url}" alt="${sticker.data[i].images}">`);
+            $('.results').append(`<img class="gif-box" src="${sticker.data[i].images.fixed_height_small.url}" alt="${sticker.data[i].images}">`);
         }
 
     })
 }
 
+/* Random call */
 
-   
+function getDataForRandom(search) {
+
+    const URL = 'http://api.giphy.com/v1/gifs/random';
+    // set up the query
+    const query = {
+        api_key: 'RVU0bZkFNjUyjUwwV8wHHrO37B0V01jy',
+        tag: search
+    }
+
+    $.getJSON(URL, query, function (random) {
+        $('.results').html('');
+        var newArr = $.makeArray(random.data);
+            for (let i = 0; i < newArr.length; i++) {
+                 $('.results').append(`<img class="gif-box" src="${newArr[i].images.fixed_height_small.url}" alt="${newArr[i].images}">`);
+            }
+        })
+
+    }
+
+
 
 
 $('.js-catcher').on('submit', function (event) {
@@ -48,9 +70,14 @@ $('.js-catcher').on('submit', function (event) {
     let selectedGif = $("#gif-select option:selected").val();
     let userInfo = $('#usr').val();
     if (selectedGif === "gif") {
+        $('.sticker-results').html('');
         getDataFromGiphy(userInfo);
-    } else if(selectedGif === "sticker"){
+    } else if (selectedGif === "sticker") {
+        $('.results').html('');
         getDataForSticker(userInfo);
+    } else if (selectedGif === "random") {
+        $('.results').html('');
+        getDataForRandom(userInfo);
     }
 
 });
