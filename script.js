@@ -13,8 +13,8 @@ function getDataFromGiphy(search) {
     $.getJSON(URL, query, function (gif) {
         clearResults();
         for (let i = 0; i < gif.data.length; i++) {
-            $('.results').append(`<img class="gif-box" src="${gif.data[i].images.fixed_height_small.url}" alt="${gif.data[i].images}">
-            <button class="gif-copy btn btn-danger">copy</button>`);
+            $('.results').append(`<a href="${gif.data[i].url}">
+            <img class="gif-box" src="${gif.data[i].images.fixed_height_small.url}" alt="${gif.data[i].images}" title="${gif.data[i].title}"></a>`);
         }
 
     })
@@ -36,7 +36,8 @@ function getDataForSticker(search) {
     $.getJSON(URL, query, function (sticker) {
         clearResults();
         for (let i = 0; i < sticker.data.length; i++) {
-            $('.results').append(`<img class="gif-box" src="${sticker.data[i].images.fixed_height_small.url}" alt="${sticker.data[i].images}">`);
+            $('.results').append(`<a href="${sticker.data[i].url}">
+            <img class="gif-box" src="${sticker.data[i].images.fixed_height_small.url}" alt="${sticker.data[i].images}"></a>`);
         }
 
     })
@@ -57,7 +58,7 @@ function getDataForRandomGif(search) {
         clearResults()
         var newArr = $.makeArray(random.data);
         for (let i = 0; i < newArr.length; i++) {
-            $('.results').append(`<img class="gif-box" src="${newArr[i].images.fixed_height_small.url}" alt="${newArr[i].images}">`);
+            $('.results').append(`<a href="${newArr[i].url}"><img class="gif-box" src="${newArr[i].images.fixed_height_small.url}" alt="${newArr[i].images}" title="${newArr[i].title}">`);
         }
     })
 

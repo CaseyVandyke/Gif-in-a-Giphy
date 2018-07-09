@@ -56,7 +56,7 @@ header {
 }
 
 .gif-box {
-    margin: 30px;
+    margin: 10px;
     transition: all .2s ease-in-out;
     width: 200px;
     height: 150px;
@@ -76,11 +76,6 @@ header {
     width: 375px;
     display: block;
     margin: 20px auto;
-}
-
-.gif-copy {
-    width: 200px;
-    height: 20px;
 }
 
 /* Media Queries */
