@@ -11,7 +11,7 @@ function getDataFromGiphy(search) {
     }
 
     $.getJSON(URL, query, function (gif) {
-        $('.results').html('');
+        clearResults();
         for (let i = 0; i < gif.data.length; i++) {
             $('.results').append(`<img class="gif-box" src="${gif.data[i].images.fixed_height_small.url}" alt="${gif.data[i].images}">`);
         }
@@ -33,7 +33,7 @@ function getDataForSticker(search) {
     }
 
     $.getJSON(URL, query, function (sticker) {
-        $('.results').html('');
+        clearResults();
         for (let i = 0; i < sticker.data.length; i++) {
             $('.results').append(`<img class="gif-box" src="${sticker.data[i].images.fixed_height_small.url}" alt="${sticker.data[i].images}">`);
         }
@@ -53,7 +53,7 @@ function getDataForRandom(search) {
     }
 
     $.getJSON(URL, query, function (random) {
-        $('.results').html('');
+       clearResults()
         var newArr = $.makeArray(random.data);
             for (let i = 0; i < newArr.length; i++) {
                  $('.results').append(`<img class="gif-box" src="${newArr[i].images.fixed_height_small.url}" alt="${newArr[i].images}">`);
@@ -62,7 +62,10 @@ function getDataForRandom(search) {
 
     }
 
-
+function clearResults() {
+    const clear = $('.results').html('');
+    return clear;
+}
 
 
 $('.js-catcher').on('submit', function (event) {
@@ -70,13 +73,13 @@ $('.js-catcher').on('submit', function (event) {
     let selectedGif = $("#gif-select option:selected").val();
     let userInfo = $('#usr').val();
     if (selectedGif === "gif") {
-        $('.sticker-results').html('');
+        clearResults();
         getDataFromGiphy(userInfo);
     } else if (selectedGif === "sticker") {
-        $('.results').html('');
+        clearResults();
         getDataForSticker(userInfo);
     } else if (selectedGif === "random") {
-        $('.results').html('');
+        clearResults();
         getDataForRandom(userInfo);
     }
 
