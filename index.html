@@ -19,15 +19,18 @@
         <div class="spacer"></div>
         <form action="#" class="js-catcher" role="form">
             <div class=js-container>
+                <select name="giphy" id="gif-select" class="form-control btn btn-success">
+                    <option value="#">Select</option>
+                    <option value="gif">Gifs</option>
+                    <option value="sticker">Stickers</option>
+                    <option value="random">Random gifs</option>
+                    <option value="random-sticker">Random stickers</option>
+                </select>
                 <label for="usr"></label>
                 <input aria-label="search" autocomplete="off" type="text" id="usr" placeholder="Search" required>
                 <button aria-label="submit" class="js-submit btn btn-success">Submit</button>
                 <label for="gif-select"></label>
-                <select name="giphy" id="gif-select">
-                    <option value="gif">Gifs</option>
-                    <option value="sticker">Stickers</option>
-                    <option value="random">Random</option>
-                </select>
+
                 <div class="results"></div>
 
             </div>

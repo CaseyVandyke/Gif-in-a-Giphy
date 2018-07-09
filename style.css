@@ -56,9 +56,10 @@ header {
 }
 
 .gif-box {
-    margin: 10px;
+    margin: 30px;
     transition: all .2s ease-in-out;
     width: 200px;
+    height: 150px;
 }
 
 .gif-box:hover {
@@ -71,11 +72,25 @@ header {
     text-align: center;
 }
 
+#gif-select {
+    width: 375px;
+    display: block;
+    margin: 20px auto;
+}
+
+.gif-copy {
+    width: 200px;
+    height: 20px;
+}
 
 /* Media Queries */
 
 @media only screen and (max-width: 484px) {
     .js-submit {
+        width: 300px;
+    }
+
+    #gif-select {
         width: 300px;
     }
 }
