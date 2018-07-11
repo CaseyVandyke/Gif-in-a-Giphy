@@ -9,7 +9,6 @@
 body {
     background-color: #141414;
     font-family: Roboto, sans-serif;
-    height: 2000px;
 }
 
 .logo {
@@ -28,13 +27,7 @@ header {
     color: #fff;
 }
 
-#usr {
-    width: 300px;
-    padding: 10px;
-    border-radius: 6px;
-}
-
-#sticker {
+#usr, .user-number, #sticker{
     width: 300px;
     padding: 10px;
     border-radius: 6px;
@@ -58,8 +51,7 @@ header {
 .gif-box {
     margin: 10px;
     transition: all .2s ease-in-out;
-    width: 200px;
-    height: 150px;
+    width: 300px;
 }
 
 .gif-box:hover {
