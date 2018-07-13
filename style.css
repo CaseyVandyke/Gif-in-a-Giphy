@@ -42,9 +42,17 @@ header {
     padding: 10px;
 }
 
+.results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .gif-box {
     margin: 10px;
     transition: all .2s ease-in-out;
+    width: 237px;
+    height: 150px;
 }
 
 .gif-box:hover {

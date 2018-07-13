@@ -63,7 +63,23 @@ function getDataForTrendingGif(numHolder) {
     clearResults()
     for (let i = 0; i < numHolder; i++) {
         $.getJSON(URL, query, function (trending) {
-            $('.results').append(`<div class="row"><div class="col-sm"><img class="gif-box" src="${trending.data[i].images.fixed_height_small.url}" alt="${trending.data[i].images}" title="${trending.data[i].title}"></div></div>`);
+            $('.results').append(`<img class="gif-box" src="${trending.data[i].images.fixed_height_small.url}" alt="${trending.data[i].images}" title="${trending.data[i].title}">`);
+        })
+    }
+}
+
+function getDataForTrendingSticker(numHolder) {
+
+    const URL = 'https://api.giphy.com/v1/stickers/trending';
+    // set up the query
+    const query = {
+        api_key: 'RVU0bZkFNjUyjUwwV8wHHrO37B0V01jy',
+        limit: numHolder
+    }
+    clearResults()
+    for (let i = 0; i < numHolder; i++) {
+        $.getJSON(URL, query, function (trending) {
+            $('.results').append(`<img class="gif-box" src="${trending.data[i].images.fixed_height_small.url}" alt="${trending.data[i].images}" title="${trending.data[i].title}">`);
         })
     }
 }
@@ -78,33 +94,36 @@ function clearResults() {
 // Button that retrieves different search results depending on user selection 
 
 $('.js-catcher').on('submit', function (event) {
-            event.preventDefault();
-            let numberHolder = $('.user-number').val();
-            let selectedGif = $("#gif-select option:selected").val();
-            let userInfo = $('#usr').val();
-            if (userInfo.trim() === $('#usr').val("")) {
-                alert('No Homo');
-            } else {
-                if (selectedGif === "gif") {
-                    clearResults();
-                    getDataFromGiphy(userInfo, numberHolder);
-                } else if (selectedGif === "sticker") {
-                    clearResults();
-                    getDataForSticker(userInfo, numberHolder);
-                } else if (selectedGif === "random") {
-                    clearResults();
-                    getDataForRandomGif(numberHolder);
-                } else if (selectedGif === "trending") {
-                    clearResults();
-                    getDataForTrendingGif(numberHolder);
-                }
-            }
-        });
+    event.preventDefault();
+    let numberHolder = $('.user-number').val();
+    let selectedGif = $("#gif-select option:selected").val();
+    let userInfo = $('#usr').val();
+    if (userInfo.trim() === $('#usr').val("")) {
+        alert('No Homo');
+    } else {
+        if (selectedGif === "gif") {
+            clearResults();
+            getDataFromGiphy(userInfo, numberHolder);
+        } else if (selectedGif === "sticker") {
+            clearResults();
+            getDataForSticker(userInfo, numberHolder);
+        } else if (selectedGif === "random") {
+            clearResults();
+            getDataForRandomGif(numberHolder);
+        } else if (selectedGif === "trending") {
+            clearResults();
+            getDataForTrendingGif(numberHolder);
+        } else if (selectedGif === "trend-stickers") {
+            clearResults();
+            getDataForTrendingSticker(numberHolder);
+        }
+    }
+});
 
-        $('#gif-select').on('change', function (event) {
-            if ($(this).val() == 'random' || ($(this).val() == 'trending')) {
-                $('#usr').hide();
-            } else {
-                $('#usr').show();
-            }
-        });
+$('#gif-select').on('change', function (event) {
+    if ($(this).val() == 'random' || ($(this).val() == 'trending' || ($(this).val() == 'trend-stickers'))) {
+        $('#usr').hide();
+    } else {
+        $('#usr').show();
+    }
+});
