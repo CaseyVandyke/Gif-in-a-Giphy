@@ -63,7 +63,7 @@ function getDataForTrendingGif(numHolder) {
     clearResults()
     for (let i = 0; i < numHolder; i++) {
         $.getJSON(URL, query, function (trending) {
-            $('.results').append(`<img class="gif-box" src="${trending.data[i].images.fixed_height_small.url}" alt="${trending.data[i].images}" title="${trending.data[i].title}">`);
+            $('.results').append(`<div class="row"><div class="col-sm"><img class="gif-box" src="${trending.data[i].images.fixed_height_small.url}" alt="${trending.data[i].images}" title="${trending.data[i].title}"></div></div>`);
         })
     }
 }
