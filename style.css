@@ -25,21 +25,11 @@ header {
     text-align: center;
     font-weight: 300;
     color: #fff;
-}
-
-#usr, .user-number, #sticker{
-    width: 300px;
-    padding: 10px;
-    border-radius: 6px;
+    margin-bottom: 30px;
 }
 
 .js-container {
     text-align: center;
-}
-
-.js-submit {
-    margin: 20px 0;
-    padding: 10px;
 }
 
 .results {
@@ -65,20 +55,50 @@ header {
     text-align: center;
 }
 
-#gif-select {
-    width: 375px;
-    display: block;
-    margin: 20px auto;
+.js-submit,
+.copy-url {
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    background: #219236;
+    color: #fff;
 }
 
-/* Media Queries */
+.user-number,
+#usr,
+#sticker {
+    margin: 10px;
+    width: 140px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
 
-@media only screen and (max-width: 484px) {
-    .js-submit {
-        width: 300px;
-    }
+#gif-select,
+.js-submit,
+.copy-url,
+#sticker {
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+}
 
-    #gif-select {
-        width: 300px;
-    }
+#gif-select {
+    display: block;
+    margin: 10px auto;
+    height: 40px;
+    border: none;
+}
+
+.iso-container {
+    margin: 0 auto;
+}
+
+.iso-gif {
+    display: block;
+    height: 450px;
+    width: 600px;
+    padding: 10px;
 }

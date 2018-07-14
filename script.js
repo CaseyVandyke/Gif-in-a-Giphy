@@ -11,8 +11,8 @@ function getDataFromGiphy(search, numHolder) {
     $.getJSON(URL, query, function (gif) {
         clearResults();
         for (let i = 0; i < gif.data.length; i++) {
-            $('.results').append(`<a href="${gif.data[i].images.fixed_height_small.url}" class="iso-gif">
-                                    <img class="gif-box" src="${gif.data[i].images.fixed_height_small.url}" alt="${gif.data[i].images}" title="${gif.data[i].title}">
+            $('.results').append(`<a href="${gif.data[i].images.downsized_large.url}" class="click-gif">
+                                    <img class="gif-box" src="${gif.data[i].images.downsized_large.url}" alt="${gif.data[i].images}" title="${gif.data[i].title}">
                                   </a>`);
         }
     })
@@ -32,8 +32,8 @@ function getDataForSticker(search, numHolder) {
     $.getJSON(URL, query, function (sticker) {
         clearResults();
         for (let i = 0; i < sticker.data.length; i++) {
-            $('.results').append(`<a href="${sticker.data[i].images.fixed_height_small.url}" class="iso-gif">
-                                    <img class="gif-box" src="${sticker.data[i].images.fixed_height_small.url}" alt="${sticker.data[i].images}">
+            $('.results').append(`<a href="${sticker.data[i].images.downsized_large.url}" class="click-gif">
+                                    <img class="gif-box" src="${sticker.data[i].images.downsized_large.url}" alt="${sticker.data[i].images}">
                                   </a>`);
         }
     })
@@ -51,8 +51,8 @@ function getDataForRandomGif(numHolder) {
     clearResults()
     for (let i = 0; i < numHolder; i++) {
         $.getJSON(URL, query, function (random) {
-            $('.results').append(`<a href="${random.data.images.fixed_height_small.url}" class="iso-gif">
-                                    <img class="gif-box" src="${random.data.images.fixed_height_small.url}" alt="${random.data.images}" title="${random.data.title}">
+            $('.results').append(`<a href="${random.data.images.downsized_large.url}" class="click-gif">
+                                    <img class="gif-box" src="${random.data.images.downsized_large.url}" alt="${random.data.images}" title="${random.data.title}">
                                   </a>`);
         })
     }
@@ -69,8 +69,8 @@ function getDataForTrendingGif(numHolder) {
     clearResults()
     for (let i = 0; i < numHolder; i++) {
         $.getJSON(URL, query, function (trending) {
-            $('.results').append(`<a href="${trending.data[i].images.fixed_height.url}" class="iso-gif">
-                                    <img class="gif-box" src="${trending.data[i].images.fixed_height_small.url}" alt="${trending.data[i].images}" title="${trending.data[i].title}">
+            $('.results').append(`<a href="${trending.data[i].images.downsized_large.url}" class="click-gif">
+                                    <img class="gif-box" src="${trending.data[i].images.downsized_large.url}" alt="${trending.data[i].images}" title="${trending.data[i].title}">
                                   </a>`);
 
         })
@@ -88,8 +88,8 @@ function getDataForTrendingSticker(numHolder) {
     clearResults()
     for (let i = 0; i < numHolder; i++) {
         $.getJSON(URL, query, function (trending) {
-            $('.results').append(`<a href="${trending.data[i].images.fixed_height.url}" class="iso-gif">
-                                    <img class="gif-box" src="${trending.data[i].images.fixed_height_small.url}" alt="${trending.data[i].images}" title="${trending.data[i].title}">
+            $('.results').append(`<a href="${trending.data[i].images.original.url}" class="click-gif">
+                                    <img class="gif-box" src="${trending.data[i].images.original.url}" alt="${trending.data[i].images}" title="${trending.data[i].title}">
                                   </a>`);
         })
     }
@@ -104,9 +104,15 @@ function clearResults() {
 
 // Adds functionality to clicked gif
 
-$('.results').on('click', function(event){
+$('.results').on('click', '.click-gif', function(event){
     event.preventDefault();
-    ($(this).find("a").attr('href'));
+    let hold = ($(this).find("img").attr('src'));
+    $('.results').html('');
+    ($(this).html(`<div class="iso-container">
+                            <img src="${hold}" class="iso-gif">
+                            <button class="btn btn-danger copy-url">Get Url</button>
+                          </div>`));
+    
     
 })
 
@@ -142,7 +148,9 @@ $('.js-catcher').on('submit', function (event) {
 $('#gif-select').on('change', function (event) {
     if ($(this).val() == 'random' || ($(this).val() == 'trending' || ($(this).val() == 'trend-stickers'))) {
         $('#usr').hide();
+        $('.user-number').css("width", "300px");
     } else {
         $('#usr').show();
+        $('.user-number').css("width", "140px");
     }
 });
