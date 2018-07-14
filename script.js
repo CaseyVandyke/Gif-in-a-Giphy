@@ -113,7 +113,7 @@ $('.results').on('click', '.click-gif', function(event){
     
     $("#myContent").html(`<div class="iso-container">
                             <img src="${hold}" class="iso-gif">
-                            <button class="btn btn-danger copy-url">Get Url</button>
+                            <button class="copy-url">Get Url</button>
                           </div>`);
     $("#myform").show(500);
     
