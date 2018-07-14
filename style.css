@@ -77,7 +77,8 @@ header {
 #gif-select,
 .js-submit,
 .copy-url,
-#sticker {
+#sticker,
+#btnClose {
     width: 300px;
     padding: 10px;
     border-radius: 5px;
@@ -99,6 +100,40 @@ header {
 .iso-gif {
     display: block;
     height: 450px;
-    width: 600px;
+    width: 100%;
     padding: 10px;
+}
+
+.copy-url:hover,
+.js-submit:hover {
+    cursor: pointer;
+    background-color: #51b564;
+}
+
+/* CSS for modal */
+
+.dialog {
+    border: 5px solid #666;
+    padding: 10px;
+    background: #3A3A3A;
+    position: absolute;
+    display: none;
+    margin: 0 auto;
+    width: 34%;
+    text-align: center;
+    left: 34%;
+    z-index: 1;
+}
+
+#btnClose {
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    background: #d9534f;
+    color: #fff;
+}
+
+#btnClose:hover {
+    background: #ffacac;
+    cursor: pointer;
 }

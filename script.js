@@ -106,15 +106,23 @@ function clearResults() {
 
 $('.results').on('click', '.click-gif', function(event){
     event.preventDefault();
+    
     let hold = ($(this).find("img").attr('src'));
-    $('.results').html('');
-    ($(this).html(`<div class="iso-container">
+
+    // Loads the modal
+    
+    $("#myContent").html(`<div class="iso-container">
                             <img src="${hold}" class="iso-gif">
                             <button class="btn btn-danger copy-url">Get Url</button>
-                          </div>`));
+                          </div>`);
+    $("#myform").show(500);
     
-    
-})
+});
+
+// Closes the modal
+$("#btnClose").click(function() {
+    $("#myform").hide(400);
+});
 
 // Button that retrieves different search results depending on user selection 
 
