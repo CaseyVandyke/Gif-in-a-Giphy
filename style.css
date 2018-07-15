@@ -73,6 +73,7 @@ header {
     padding: 10px;
     border-radius: 5px;
     font-size: 16px;
+    border: none;
 }
 
 #gif-select,
@@ -100,7 +101,7 @@ header {
 
 .iso-gif {
     display: block;
-    height: 450px;
+    height: 250px;
     width: 100%;
     padding: 10px;
 }
@@ -114,25 +115,44 @@ header {
 /* CSS for modal */
 
 .dialog {
-    border: 5px solid #666;
+    border: 5px solid #404040;
     padding: 10px;
     position: fixed;
     display: none;
     max-width: 400px;
     text-align: center;
-    left: 34%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     z-index: 1;
-    top: 150px;
-    background: #404040;
+    background: #202020;
     border-radius: 4px;
 }
 
 #btnClose {
     border: none;
     margin-top: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     background: #d9534f;
     color: #fff;
+}
+
+#gif-url {
+    border: none;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    background: #219236;
+    color: #fff;
+    padding: 10px;
+    width: 300px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.gif-input {
+    padding: 10px;
+    width: 300px;
+    font-size: 16px;
 }
 
 #btnClose:hover {

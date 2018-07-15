@@ -104,23 +104,28 @@ function clearResults() {
 
 // Adds functionality to clicked gif
 
-$('.results').on('click', '.click-gif', function(event){
+$('.results').on('click', '.click-gif', function (event) {
     event.preventDefault();
-    
+
     let hold = ($(this).find("img").attr('src'));
 
+
     // Loads the modal
-    
+
     $("#myContent").html(`<div class="iso-container">
                             <img src="${hold}" class="iso-gif">
-                            <button class="copy-url">Get Url</button>
                           </div>`);
     $("#myform").show(500);
-    
+
+    $('#gif-url').click(function () {
+        ($(this).after(`<input value="${hold}" class="gif-input">`));
+    });
+
 });
 
 // Closes the modal
-$("#btnClose").click(function() {
+
+$("#btnClose").click(function () {
     $("#myform").hide(400);
 });
 
