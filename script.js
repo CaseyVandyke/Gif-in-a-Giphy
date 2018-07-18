@@ -12,12 +12,12 @@ function getDataFromGiphy(search, numHolder) {
         clearResults();
         for (let i = 0; i < gif.data.length; i++) {
             if (gif.data[i].length >= 1) {
-            $('.results').append(`<a href="${gif.data[i].images.downsized_large.url}" class="click-gif">
+                $('.results').append(`<a href="${gif.data[i].images.downsized_large.url}" class="click-gif">
                                     <img class="gif-box" src="${gif.data[i].images.downsized_large.url}" alt="${gif.data[i].images}" title="${gif.data[i].title}">
                                   </a>`);
-                                }   else  {
-                                    alert('no results found');
-                                }
+            } else {
+                alert('no results found');
+            }
         }
     })
 }
@@ -124,11 +124,11 @@ $('.results').on('click', '.click-gif', function (event) {
     // Retrieves url of gif
 
     $('#gif-url').one('click', function () {
-      /* turns off button after first click */
+        /* turns off button after first click */
         ($(this).after(`<input value="${hold}" class="gif-input">`));
-
+       
     });
-
+    $(".gif-input").remove();
 });
 
 // Closes the modal
@@ -145,8 +145,8 @@ $('.js-catcher').on('submit', function (event) {
     event.preventDefault();
     let numberHolder = $('.user-number').val();
     let selectedGif = $("#gif-select option:selected").val();
-    let userInfo = $('#usr').val();
-    if (userInfo.trim() === $('#usr').val("")) {
+    let userInfo = $('#keyword').val();
+    if (userInfo.trim() === $('#keyword').val("")) {
         alert('Nope enter text');
     } else {
         if (selectedGif === "gif") {
@@ -166,14 +166,15 @@ $('.js-catcher').on('submit', function (event) {
             getDataForTrendingSticker(numberHolder);
         }
     }
+    $(".foot-container").show();
 });
 
 $('#gif-select').on('change', function (event) {
     if ($(this).val() == 'random' || ($(this).val() == 'trending' || ($(this).val() == 'trend-stickers'))) {
-        $('#usr').hide();
+        $('#keyword').hide();
         $('.user-number').css("width", "300px");
     } else {
-        $('#usr').show();
+        $('#keyword').show();
         $('.user-number').css("width", "140px");
     }
 });
