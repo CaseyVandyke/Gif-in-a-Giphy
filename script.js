@@ -11,9 +11,13 @@ function getDataFromGiphy(search, numHolder) {
     $.getJSON(URL, query, function (gif) {
         clearResults();
         for (let i = 0; i < gif.data.length; i++) {
+            if (gif.data[i].length >= 1) {
             $('.results').append(`<a href="${gif.data[i].images.downsized_large.url}" class="click-gif">
                                     <img class="gif-box" src="${gif.data[i].images.downsized_large.url}" alt="${gif.data[i].images}" title="${gif.data[i].title}">
                                   </a>`);
+                                }   else  {
+                                    alert('no results found');
+                                }
         }
     })
 }
@@ -117,8 +121,12 @@ $('.results').on('click', '.click-gif', function (event) {
                           </div>`);
     $("#myform").show(500);
 
-    $('#gif-url').click(function () {
+    // Retrieves url of gif
+
+    $('#gif-url').one('click', function () {
+      /* turns off button after first click */
         ($(this).after(`<input value="${hold}" class="gif-input">`));
+
     });
 
 });
@@ -127,6 +135,8 @@ $('.results').on('click', '.click-gif', function (event) {
 
 $("#btnClose").click(function () {
     $("#myform").hide(400);
+    /* removes input from dom */
+    $(".gif-input").remove();
 });
 
 // Button that retrieves different search results depending on user selection 

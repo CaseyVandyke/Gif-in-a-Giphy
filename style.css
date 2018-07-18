@@ -33,13 +33,11 @@ header {
 }
 
 .results {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    width: 1500px;
+    margin: 0 auto;
 }
 
 .gif-box {
-    flex-basis: auto;
     margin: 10px;
     transition: all .2s ease-in-out;
     width: 240px;
@@ -147,6 +145,7 @@ header {
     width: 300px;
     font-size: 16px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .gif-input {
@@ -158,4 +157,33 @@ header {
 #btnClose:hover {
     background: #ffacac;
     cursor: pointer;
+}
+
+/* Footer */
+
+.foot-container {
+    margin: 0 auto;
+    max-width: 1500px;
+    color: #fff;
+    font-weight: 100;
+    display: none;
+}
+
+.copyright {
+    margin-bottom: 20px;
+}
+
+.support,
+.face,
+.tweet,
+.linked {
+    margin-right: 30px;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1500px) {
+    .results {
+        width: 100%;
+    }
 }
