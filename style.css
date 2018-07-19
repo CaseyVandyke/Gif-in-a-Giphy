@@ -167,6 +167,7 @@ header {
     color: #fff;
     font-weight: 100;
     display: none;
+    background: #404040;
 }
 
 .foot-mod {
@@ -190,4 +191,5 @@ header {
     .results {
         width: 100%;
     }
+
 }

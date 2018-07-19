@@ -10,13 +10,15 @@ function getDataFromGiphy(search, numHolder) {
     }
     $.getJSON(URL, query, function (gif) {
         clearResults();
+        if (gif.data == null || gif.data == undefined || gif.data.length === 0) {
+            alert('no results found');
+        }
         for (let i = 0; i < gif.data.length; i++) {
-            if (gif.data[i].length >= 1) {
+
+            if (gif.data[i].images.downsized_large.url != undefined || gif.data[i].images.downsized_large.url != null || gif.data[i].images.downsized_large.url != "") {
                 $('.results').append(`<a href="${gif.data[i].images.downsized_large.url}" class="click-gif">
                                     <img class="gif-box" src="${gif.data[i].images.downsized_large.url}" alt="${gif.data[i].images}" title="${gif.data[i].title}">
                                   </a>`);
-            } else {
-                alert('no results found');
             }
         }
     })
@@ -125,8 +127,9 @@ $('.results').on('click', '.click-gif', function (event) {
 
     $('#gif-url').one('click', function () {
         /* turns off button after first click */
+        $(".gif-input").remove();
         ($(this).after(`<input value="${hold}" class="gif-input">`));
-       
+
     });
     $(".gif-input").remove();
 });
