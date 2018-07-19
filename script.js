@@ -169,7 +169,6 @@ $('.js-catcher').on('submit', function (event) {
             getDataForTrendingSticker(numberHolder);
         }
     }
-    $(".foot-container").show();
 });
 
 $('#gif-select').on('change', function (event) {

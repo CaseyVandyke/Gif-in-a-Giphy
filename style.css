@@ -9,6 +9,7 @@
 body {
     background-color: #141414;
     font-family: Roboto, sans-serif;
+    padding-bottom: 75px;
 }
 
 .logo {
@@ -162,27 +163,41 @@ header {
 /* Footer */
 
 .foot-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
     margin: 0 auto;
-    max-width: 1500px;
+    width: 100%;
     color: #fff;
     font-weight: 100;
-    display: none;
-    background: #404040;
+    font-size: 12px;
+    background: #303030;
+    padding: 5px;
 }
 
-.foot-mod {
-    margin: 20px 0 30px 90px;
+.social-container {
+    text-align: center;
+}
+
+.social-container>a {
+    margin: 0 20px;
+    color: #219236;
 }
 
 .copyright {
-    margin-bottom: 10px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.foot-mod {
+    margin: 5px 0 0 10px;
 }
 
 .support,
 .face,
 .tweet,
 .linked {
-    margin-right: 30px;
+    text-align: center;
 }
 
 /* Media Queries */
@@ -191,5 +206,18 @@ header {
     .results {
         width: 100%;
     }
+}
 
+@media screen and (max-width: 803px) {
+    .gif-box {
+        width: 200px;
+        height: 140px;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .gif-box {
+        width: 160px;
+        height: 100px;
+    }
 }
