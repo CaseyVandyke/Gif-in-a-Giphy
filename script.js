@@ -11,10 +11,12 @@ function getDataFromGiphy(search, numHolder) {
     $.getJSON(URL, query, function (gif) {
         clearResults();
         if (gif.data == null || gif.data == undefined || gif.data.length === 0) {
-            alert('no results found');
+            $('.js-submit').after(`<div class="validate-keyword">No results found</div>`);
+            $('.js-submit').click(function () {
+                $('.validate-keyword').hide();
+            })
         }
         for (let i = 0; i < gif.data.length; i++) {
-
             if (gif.data[i].images.downsized_large.url != undefined || gif.data[i].images.downsized_large.url != null || gif.data[i].images.downsized_large.url != "") {
                 $('.results').append(`<a href="${gif.data[i].images.downsized_large.url}" class="click-gif">
                                     <img class="gif-box" src="${gif.data[i].images.downsized_large.url}" alt="${gif.data[i].images}" title="${gif.data[i].title}">
@@ -37,10 +39,18 @@ function getDataForSticker(search, numHolder) {
     }
     $.getJSON(URL, query, function (sticker) {
         clearResults();
+        if (sticker.data == null || sticker.data == undefined || sticker.data.length === 0) {
+            $('.js-submit').after(`<div class="validate-keyword">No results found</div>`);
+            $('.js-submit').click(function () {
+                $('.validate-keyword').hide();
+            })
+        }
         for (let i = 0; i < sticker.data.length; i++) {
-            $('.results').append(`<a href="${sticker.data[i].images.downsized_large.url}" class="click-gif">
+            if (sticker.data[i].images.downsized_large.url != undefined || sticker.data[i].images.downsized_large.url != null || sticker.data[i].images.downsized_large.url != "") {
+                $('.results').append(`<a href="${sticker.data[i].images.downsized_large.url}" class="click-gif">
                                     <img class="gif-box" src="${sticker.data[i].images.downsized_large.url}" alt="${sticker.data[i].images}">
                                   </a>`);
+            }
         }
     })
 }

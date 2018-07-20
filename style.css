@@ -22,6 +22,10 @@ header {
     margin-bottom: 10px;
 }
 
+a.click-gif {
+    color: #141414;
+}
+
 .fun-info {
     text-align: center;
     font-weight: 300;
@@ -58,8 +62,7 @@ header {
 .js-submit,
 .copy-url {
     border: none;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin: 10px 10px;
     background: #219236;
     color: #fff;
 }
@@ -198,6 +201,16 @@ header {
 .tweet,
 .linked {
     text-align: center;
+}
+
+.validate-keyword {
+    width: 300px;
+    padding: 10px 0 10px 10px;
+    font-size: 20px;
+    color: #fff;
+    margin: 20px auto;
+    text-align: center;
+    font-weight: 300;
 }
 
 /* Media Queries */
