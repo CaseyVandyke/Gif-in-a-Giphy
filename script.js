@@ -11,7 +11,7 @@ function getDataFromGiphy(search, numHolder) {
     $.getJSON(URL, query, function (gif) {
         clearResults();
         if (gif.data == null || gif.data == undefined || gif.data.length === 0) {
-            $('.js-submit').after(`<div class="validate-keyword">No results found</div>`);
+            $('.js-submit').after(`<div class="validate-keyword">No results enter new keyword</div>`);
             $('.js-submit').click(function () {
                 $('.validate-keyword').hide();
             })
@@ -19,7 +19,7 @@ function getDataFromGiphy(search, numHolder) {
         for (let i = 0; i < gif.data.length; i++) {
             if (gif.data[i].images.downsized_large.url != undefined || gif.data[i].images.downsized_large.url != null || gif.data[i].images.downsized_large.url != "") {
                 $('.results').append(`<a href="${gif.data[i].images.downsized_large.url}" class="click-gif">
-                                    <img class="gif-box" src="${gif.data[i].images.downsized_large.url}" alt="${gif.data[i].images}" title="${gif.data[i].title}">
+                                    <img class="gif-box" src="${gif.data[i].images.downsized_large.url}" alt="Gif image" title="${gif.data[i].title}">
                                   </a>`);
             }
         }
@@ -40,7 +40,7 @@ function getDataForSticker(search, numHolder) {
     $.getJSON(URL, query, function (sticker) {
         clearResults();
         if (sticker.data == null || sticker.data == undefined || sticker.data.length === 0) {
-            $('.js-submit').after(`<div class="validate-keyword">No results found</div>`);
+            $('.js-submit').after(`<div class="validate-keyword">No results enter new keyword</div>`);
             $('.js-submit').click(function () {
                 $('.validate-keyword').hide();
             })
@@ -48,7 +48,7 @@ function getDataForSticker(search, numHolder) {
         for (let i = 0; i < sticker.data.length; i++) {
             if (sticker.data[i].images.downsized_large.url != undefined || sticker.data[i].images.downsized_large.url != null || sticker.data[i].images.downsized_large.url != "") {
                 $('.results').append(`<a href="${sticker.data[i].images.downsized_large.url}" class="click-gif">
-                                    <img class="gif-box" src="${sticker.data[i].images.downsized_large.url}" alt="${sticker.data[i].images}">
+                                    <img class="gif-box" src="${sticker.data[i].images.downsized_large.url}" alt="Giphy sticker">
                                   </a>`);
             }
         }
@@ -68,7 +68,7 @@ function getDataForRandomGif(numHolder) {
     for (let i = 0; i < numHolder; i++) {
         $.getJSON(URL, query, function (random) {
             $('.results').append(`<a href="${random.data.images.downsized_large.url}" class="click-gif">
-                                    <img class="gif-box" src="${random.data.images.downsized_large.url}" alt="${random.data.images}" title="${random.data.title}">
+                                    <img class="gif-box" src="${random.data.images.downsized_large.url}" alt="Random gif" title="${random.data.title}">
                                   </a>`);
         })
     }
@@ -86,7 +86,7 @@ function getDataForTrendingGif(numHolder) {
     for (let i = 0; i < numHolder; i++) {
         $.getJSON(URL, query, function (trending) {
             $('.results').append(`<a href="${trending.data[i].images.downsized_large.url}" class="click-gif">
-                                    <img class="gif-box" src="${trending.data[i].images.downsized_large.url}" alt="${trending.data[i].images}" title="${trending.data[i].title}">
+                                    <img class="gif-box" src="${trending.data[i].images.downsized_large.url}" alt="Trending gif" title="${trending.data[i].title}">
                                   </a>`);
 
         })
@@ -105,7 +105,7 @@ function getDataForTrendingSticker(numHolder) {
     for (let i = 0; i < numHolder; i++) {
         $.getJSON(URL, query, function (trending) {
             $('.results').append(`<a href="${trending.data[i].images.original.url}" class="click-gif">
-                                    <img class="gif-box" src="${trending.data[i].images.original.url}" alt="${trending.data[i].images}" title="${trending.data[i].title}">
+                                    <img class="gif-box" src="${trending.data[i].images.original.url}" alt="Trending sticker" title="${trending.data[i].title}">
                                   </a>`);
         })
     }
@@ -129,7 +129,7 @@ $('.results').on('click', '.click-gif', function (event) {
     // Loads the modal
 
     $("#myContent").html(`<div class="iso-container">
-                            <img src="${hold}" class="iso-gif">
+                            <img src="${hold}" alt="Giphy image" class="iso-gif">
                           </div>`);
     $("#myform").show(500);
 
