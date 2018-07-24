@@ -219,7 +219,6 @@ a.click-gif {
         width: 100%;
     }
 }
-
 @media screen and (max-width: 803px) {
     .gif-box {
         width: 200px;
