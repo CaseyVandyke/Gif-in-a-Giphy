@@ -6,10 +6,6 @@
     box-sizing: border-box;
 }
 
-html {
-    -webkit-appearance: none;
-}
-
 body {
     background-color: #141414;
     font-family: Roboto, sans-serif;
@@ -142,6 +138,7 @@ a.click-gif {
     margin-bottom: 30px;
     background: #d9534f;
     color: #fff;
+    -webkit-appearance: none;
 }
 
 #gif-url {
