@@ -89,6 +89,7 @@ a.click-gif {
     border-radius: 5px;
     font-size: 17px;
     border: none;
+    -webkit-appearance: none;
 }
 
 #gif-select {
@@ -138,7 +139,6 @@ a.click-gif {
     margin-bottom: 30px;
     background: #d9534f;
     color: #fff;
-    -webkit-appearance: none;
 }
 
 #gif-url {
