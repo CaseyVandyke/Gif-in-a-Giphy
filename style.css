@@ -152,6 +152,7 @@ a.click-gif {
     font-size: 17px;
     border-radius: 5px;
     cursor: pointer;
+    -webkit-appearance: none;
 }
 
 .gif-input {
