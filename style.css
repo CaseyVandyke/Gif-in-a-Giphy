@@ -79,7 +79,6 @@ a.click-gif {
     border: none;
 }
 
-#gif-select,
 .js-submit,
 .copy-url,
 #sticker,
@@ -97,6 +96,10 @@ a.click-gif {
     margin: 10px auto;
     height: 40px;
     border: none;
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 17px;
 }
 
 .iso-container {
