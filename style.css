@@ -226,10 +226,14 @@ a.click-gif {
     }
 }
 
-@media screen and (max-width: 475px) {
+@media screen and (min-width: 320px) and (max-width: 640px) {
     .gif-box {
-        width: 160px;
+        width: 150px;
         height: 100px;
+    }
+
+    .logo {
+        width: 300px;
     }
 }
 
