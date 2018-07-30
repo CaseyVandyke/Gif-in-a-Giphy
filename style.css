@@ -233,7 +233,17 @@ a.click-gif {
     }
 
     .logo {
-        width: 300px;
+        width: 200px;
+    }
+
+    #gif-url {
+        background: #219236;
+        padding: 10px;
+    }
+
+    #btnClose {
+        background: #d9534f;
+        padding: 10px;
     }
 }
 
