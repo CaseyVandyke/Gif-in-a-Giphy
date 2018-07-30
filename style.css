@@ -245,5 +245,9 @@ a.click-gif {
         background: #d9534f;
         padding: 10px;
     }
+
+    #myform {
+        width: 200px;
+    }
 }
 
