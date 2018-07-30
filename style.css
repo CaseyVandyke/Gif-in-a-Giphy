@@ -226,3 +226,10 @@ a.click-gif {
     }
 }
 
+@media screen and (min-width: 320px) and (max-width: 640px) {
+    .gif-box {
+        width: 150px;
+        height: 100px;
+    }
+}
+
