@@ -209,6 +209,10 @@ a.click-gif {
     text-align: center;
 }
 
+.foot-icon {
+    text-decoration: none;
+}
+
 .validate-keyword {
     padding: 10px 0 10px 10px;
     font-size: 20px;
