@@ -1,71 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Gif in a giphy</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
-        crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+      integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
     <div class="content">
-        <header role="banner">
-            <img src="img/ezgif.com-gif-maker.gif" alt="giphy-logo" class="logo">
-        </header>
-        <h1 class="fun-info">Gif in a Giphy</h1>
-        <div class="spacer"></div>
-        <form action="#" class="js-catcher" role="form">
-            <div class=js-container>
-                <select name="giphy" id="gif-select" class="form-control">
-                    <option value="gif">Gifs</option>
-                    <option value="sticker">Stickers</option>
-                    <option value="random">Random gifs</option>
-                    <option value="trending">Trending gifs</option>
-                    <option value="trend-stickers">Trending stickers</option>
-                </select>
-                <label for="usr-number"></label>
-                <input autocomplete="off" type="text" class="user-number" placeholder="Enter amount" required>
-                <label for="usr"></label>
-                <input aria-label="search" autocomplete="off" type="text" id="keyword" placeholder="Keyword">
-                <br>
-                <button aria-label="submit" class="js-submit">Submit</button>
-                <div class="dialog" id="myform">
-                    <form id="modalForm">
-                        <div id="myContent"></div>
-                        <input type="button" value="Get url" id="gif-url">
-                        <input type="button" value="Close" id="btnClose">
-                    </form>
-                </div>
+      <header role="banner">
+        <img src="img/ezgif.com-gif-maker.gif" alt="giphy-logo" class="logo" />
+      </header>
+      <h1 class="fun-info">Gif in a Giffy</h1>
+      <div class="spacer"></div>
+      <form action="#" class="js-catcher" role="form">
+        <div class="js-container">
+          <select name="giphy" id="gif-select" class="form-control">
+            <option value="gif">Gifs</option>
+            <option value="sticker">Stickers</option>
+            <option value="random">Random gifs</option>
+            <option value="trending">Trending gifs</option>
+            <option value="trend-stickers">Trending stickers</option>
+          </select>
+          <label for="usr-number"></label>
+          <input
+            autocomplete="off"
+            type="text"
+            class="user-number"
+            placeholder="Enter amount"
+            required
+          />
+          <label for="usr"></label>
+          <input
+            aria-label="search"
+            autocomplete="off"
+            type="text"
+            id="keyword"
+            placeholder="Keyword"
+          />
+          <br />
+          <button aria-label="submit" class="js-submit">Submit</button>
+          <div class="dialog" id="myform">
+            <form id="modalForm">
+              <div id="myContent"></div>
+              <input type="button" value="Get url" id="gif-url" />
+              <input type="button" value="Close" id="btnClose" />
+            </form>
+          </div>
 
-                <div class="results"></div>
-            </div>
-        </form>
-        <footer class="foot-container" role="contentinfo">
-            <div class="foot-mod">
-                <div class="social-container">
-                    <a href="https://www.linkedin.com/in/casey-van-dyke-930248b6/" class="foot-icon">
-                        <i class="fab fa-linkedin-in fa-2x"></i>
-                    </a>
-                    <a href="https://github.com/CaseyVandyke" class="foot-icon">
-                        <i class="fab fa-github fa-2x"></i>
-                    </a>
-                    <a href="#" class="foot-icon">
-                        <i class="far fa-envelope fa-2x"></i>
-                    </a>
-                </div>
-                <div class="copyright">
-                    <p>&copy 2018 - Casey Van Dyke</p>
-                </div>
-            </div>
-        </footer>
+          <div class="results"></div>
+        </div>
+      </form>
+      <footer class="foot-container" role="contentinfo">
+        <div class="foot-mod">
+          <div class="social-container">
+            <a
+              href="https://www.linkedin.com/in/casey-van-dyke-930248b6/"
+              class="foot-icon"
+            >
+              <i class="fab fa-linkedin-in fa-2x"></i>
+            </a>
+            <a href="https://github.com/CaseyVandyke" class="foot-icon">
+              <i class="fab fa-github fa-2x"></i>
+            </a>
+            <a href="#" class="foot-icon">
+              <i class="far fa-envelope fa-2x"></i>
+            </a>
+          </div>
+          <div class="copyright">
+            <p>&copy 2018 - Casey Van Dyke</p>
+          </div>
+        </div>
+      </footer>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
