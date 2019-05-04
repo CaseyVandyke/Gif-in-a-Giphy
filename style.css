@@ -66,6 +66,10 @@ a.click-gif {
   margin: 10px 10px;
   background: #219236;
   color: #fff;
+}
+
+.js-submit:hover,
+.copy-url:hover {
   transition: all 0.2s ease-in-out;
 }
 
